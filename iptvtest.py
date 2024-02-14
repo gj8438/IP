@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import datetime
 import threading
 from queue import Queue
 import requests
@@ -16,13 +17,14 @@ results = []
 channels = []
 error_channels = []
 
-with open("iptv.txt", 'r', encoding='utf-8') as file:
+with open("itv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
         if line:
             channel_name, channel_url = line.split(',')
-            channels.append((channel_name, channel_url))
+            if '卫视' in channel_name or 'CCTV' in channel_name or '湖南' in channel_name or '少儿' in channel_name or '凤凰' in channel_name:
+                channels.append((channel_name, channel_url))
 
 # 定义工作线程函数
 def worker():
@@ -67,8 +69,6 @@ def worker():
 
         # 标记任务完成
         task_queue.task_done()
-        if numberx >= 10:
-            break
 
 
 # 创建多个工作线程
@@ -97,24 +97,23 @@ def channel_key(channel_name):
 # 对频道进行排序
 results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
 results.sort(key=lambda x: channel_key(x[0]))
-
+now_today = datetime.date.today()
 # 将结果写入文件
-with open("iptv_results.txt", 'w', encoding='utf-8') as file:
+with open("itv_results.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url, speed = result
         file.write(f"{channel_name},{channel_url},{speed}\n")
 
-with open("iptv_speed.txt", 'w', encoding='utf-8') as file:
+with open("itv_speed.txt", 'w', encoding='utf-8') as file:
     for result in results:
         channel_name, channel_url, speed = result
         file.write(f"{channel_name},{channel_url}\n")
 
 
-result_counter = 10  # 每个频道需要的个数
+result_counter = 8  # 每个频道需要的个数
 
-#生成频道分类列表iptvlist.txt文件
-with open("iptvlist.txt", 'w', encoding='utf-8') as file:
-    channel_counters = {}    
+with open("itvlist.txt", 'w', encoding='utf-8') as file:
+    channel_counters = {}
     file.write('央视频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
@@ -128,8 +127,7 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-                
-    channel_counters = {}    
+    channel_counters = {}
     file.write('卫视频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
@@ -143,87 +141,11 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-                
-    channel_counters = {}
-    file.write('省内频道,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '湖南' in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
-                
-    channel_counters = {}
-    file.write('港澳频道,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '凤凰' in channel_name or '翡翠' in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
-                
-    channel_counters = {}
-    file.write('少儿频道,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '卡通' in channel_name or '少儿' in channel_name or '动画' in channel_name or '炫动' in channel_name or '动漫' in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
-                
-    channel_counters = {}
-    file.write('求索纪实,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '求索' in channel_name or '纪实' in channel_name or '地理' in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
-                
-    channel_counters = {}
-    file.write('影视综合,#genre#\n')
-    for result in results:
-        channel_name, channel_url, speed = result
-        if '电影' in channel_name or '影院' in channel_name or '戏剧' in channel_name or '戏曲' in channel_name or '影视' in channel_name or '梨园' in channel_name or '电视剧' in channel_name or '综艺' in channel_name or '剧场' in channel_name:
-            if channel_name in channel_counters:
-                if channel_counters[channel_name] >= result_counter:
-                    continue
-                else:
-                    file.write(f"{channel_name},{channel_url}\n")
-                    channel_counters[channel_name] += 1
-            else:
-                file.write(f"{channel_name},{channel_url}\n")
-                channel_counters[channel_name] = 1
-                
     channel_counters = {}
     file.write('其他频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if 'CCTV' not in channel_name and '卫视' not in channel_name  and '地理' not in channel_name and 'BTV卡酷' not in channel_name and '凤凰' not in channel_name and '翡翠' not in channel_name and '求索' not in channel_name and '纪实' not in channel_name and '钓' not in channel_name and '锦至' not in channel_name and '测试' not in channel_name and '演示' not in channel_name and '茶' not in channel_name and '购物' not in channel_name and '理财' not in channel_name and '湖南' not in channel_name and '卡通' not in channel_name and '少儿' not in channel_name and '动画' not in channel_name and '炫动' not in channel_name and '动漫' not in channel_name and '剧场' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '戏剧' not in channel_name and '戏曲' not in channel_name and '影视' not in channel_name and '梨园' not in channel_name and '电视剧影' not in channel_name and '综艺' not in channel_name:
+        if 'CCTV' not in channel_name and '卫视' not in channel_name and '测试' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -233,9 +155,11 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
+                
+    file.write(f"{now_today}更新,#genre#\n")
 
-#生成频道分类列表iptv_list.m3u文件
-with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
+
+with open("itvlist.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('#EXTM3U\n')
     for result in results:
@@ -252,7 +176,6 @@ with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
                 file.write(f"#EXTINF:-1 group-title=\"央视频道\",{channel_name}\n")
                 file.write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
-                
     channel_counters = {}
     #file.write('卫视频道,#genre#\n')
     for result in results:
@@ -269,7 +192,6 @@ with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
                 file.write(f"#EXTINF:-1 group-title=\"卫视频道\",{channel_name}\n")
                 file.write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
-                
     channel_counters = {}
     #file.write('其他频道,#genre#\n')
     for result in results:
@@ -286,19 +208,5 @@ with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
                 file.write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
                 file.write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
-
-                
-
-# 合并自定义频道文件内容
-file_contents = []
-file_paths = ["iptvlist.txt","zdy.txt"]  # 替换为实际的文件路径列表
-for file_path in file_paths:
-    with open(file_path, 'r', encoding="utf-8") as file:
-        content = file.read()
-        file_contents.append(content)
-
-# 生成自定义频道文件合并后的文件
-with open("iptv_list.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
-
-print("任务运行完毕，分类频道列表可查看文件夹内iptv_list.txt和iptv_list.m3u文件！")
+    
+    file.write(f"#EXTINF:-1 group-title=\"{now_today}更新\"\n")
