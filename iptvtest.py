@@ -23,7 +23,7 @@ with open("iptv.txt", 'r', encoding='utf-8') as file:
         line = line.strip()
         if line:
             channel_name, channel_url = line.split(',')
-            if '卫视' in channel_name or 'CCTV' in channel_name or '湖南' in channel_name or '翡翠' in channel_name or '凤凰' in channel_name:
+            if '少儿' in channel_name or '卡通' in channel_name or '动漫' in channel_name or '炫动' in channel_name or '卫视' in channel_name or 'CCTV' in channel_name or '湖南' in channel_name or '翡翠' in channel_name or '凤凰' in channel_name :
                 channels.append((channel_name, channel_url))
 
 # 定义工作线程函数
@@ -170,7 +170,20 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-
+      channel_counters = {}
+      file.write('少儿频道,#genre#\n')
+      for result in results:
+          channel_name, channel_url, speed = result
+          if '少儿' in channel_name or '卡通' in channel_name or '动漫' in channel_name or '炫动' in channel_name:
+              if channel_name in channel_counters:
+                  if channel_counters[channel_name] >= result_counter:
+                      continue
+                  else:
+                      file.write(f"{channel_name},{channel_url}\n")
+                      channel_counters[channel_name] += 1
+              else:
+                  file.write(f"{channel_name},{channel_url}\n")
+                  channel_counters[channel_name] = 1
 
 with open("iptvlist.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
