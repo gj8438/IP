@@ -34,11 +34,9 @@ jobs:
           sudo chmod +x /usr/local/bin/chromedriver
 
       - name: Run iptv
-        run: python ${{ github.workspace }}/iptv.py
+        run: python ${{ github.workspace }}/iptvdwj.py
 
-      - name: Run iptvtest
-        run: python ${{ github.workspace }}/iptvtest.py
-        
+     
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
