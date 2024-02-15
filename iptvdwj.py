@@ -255,8 +255,9 @@ print("频道列表文件iptv.txt获取完成！")
 
 
 
-eventlet.monkey_patch()
+
 import eventlet
+eventlet.monkey_patch()
 import os
 import re
 import time
