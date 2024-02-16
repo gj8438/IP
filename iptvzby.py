@@ -8,7 +8,6 @@ import re
 urls = [
     "https://fofa.info/result?qbase64=cmVnaW9uPSJISyI%3D"              # 香 港
     "https://fofa.info/result?qbase64=cmVnaW9uPSLmvrPpl6gi"            # 澳 门
-    "https://fofa.info/result?qbase64=cmVnaW9uPSLlj7Dmub4i"            # 台 湾
     "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iSGViZWki",                     # 河 北
     "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iYmVpamluZyI%3D",               # 北 京
     "https://fofa.info/result?qbase64=ImlwdHYvbGl2ZS96aF9jbi5qcyIgJiYgY291bnRyeT0iQ04iICYmIHJlZ2lvbj0iZ3Vhbmdkb25nIg%3D%3D",         # 广 东
@@ -563,5 +562,5 @@ for file_path in file_paths:
 # 写入自定义频道文件合并后的文件
 with open("iptv_list.txt", "w", encoding="utf-8") as output:
     output.write('\n'.join(file_contents))
-file.write(f"#EXTINF:-1 group-title=\"{now_today}更新\"\n")
+    
 print("任务运行完毕，分类频道列表可查看文件夹内iptv_list.txt和iptv_list.m3u文件！")
