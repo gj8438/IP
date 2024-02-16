@@ -250,11 +250,6 @@ with open("iptv.txt", 'w', encoding='utf-8') as file:
         file.write(result + "\n")
         print(result)
         
-# 对频道进行排序
-results.sort(key=lambda x: (x[0], -float(x[2].split()[0])))
-results.sort(key=lambda x: channel_key(x[0]))
-
-        
 time.sleep(10)
 print("频道列表文件iptv.txt获取完成！")
 
