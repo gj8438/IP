@@ -230,6 +230,7 @@ for url in urls:
                             name = name.replace("炫动卡通", "哈哈炫动")
                             name = name.replace("卡酷卡通", "卡酷少儿")
                             name = name.replace("卡酷动画", "卡酷少儿")
+                            name = name.replace("卡酷酷卡", "卡酷少儿")
                             name = name.replace("BTV卡酷", "卡酷少儿")
                             name = name.replace("优曼卡通", "优漫卡通")
                             name = name.replace("优曼卡通", "优漫卡通")
@@ -413,7 +414,7 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
     file.write('省内频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '湖南' in channel_name:
+        if '湖南' in channel_name or '长沙' in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -428,7 +429,7 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
     file.write('港澳频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '凤凰' in channel_name or '翡翠' in channel_name:
+        if '凤凰' in channel_name or '翡翠' in channel_name or 'TVB' in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
@@ -488,7 +489,7 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
     file.write('其他频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if 'CCTV' not in channel_name and '卫视' not in channel_name and '地理' not in channel_name and 'BTV卡酷' not in channel_name and '凤凰' not in channel_name and '翡翠' not in channel_name and '求索' not in channel_name and '纪实' not in channel_name and '钓' not in channel_name and '锦至' not in channel_name and '测试' not in channel_name and '演示' not in channel_name and '茶' not in channel_name and '购物' not in channel_name and '理财' not in channel_name and '湖南' not in channel_name and '卡通' not in channel_name and '少儿' not in channel_name and '动画' not in channel_name and '炫动' not in channel_name and '动漫' not in channel_name and '剧场' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '戏剧' not in channel_name and '戏曲' not in channel_name and '影视' not in channel_name and '梨园' not in channel_name and '电视剧影' not in channel_name and '综艺' not in channel_name:
+        if 'CCTV' not in channel_name and '卫视' not in channel_name and '地理' not in channel_name and 'BTV卡酷' not in channel_name and '凤凰' not in channel_name and '翡翠' not in channel_name and 'TVB' not in channel_name and '求索' not in channel_name and '纪实' not in channel_name and '钓' not in channel_name and '锦至' not in channel_name and '测试' not in channel_name and '演示' not in channel_name and '茶' not in channel_name and '购物' not in channel_name and '理财' not in channel_name and '湖南' not in channel_name and '长沙' not in channel_name and '卡通' not in channel_name and '少儿' not in channel_name and '动画' not in channel_name and '炫动' not in channel_name and '动漫' not in channel_name and '剧场' not in channel_name and '电影' not in channel_name and '影院' not in channel_name and '戏剧' not in channel_name and '戏曲' not in channel_name and '影视' not in channel_name and '梨园' not in channel_name and '电视剧影' not in channel_name and '综艺' not in channel_name:
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
                     continue
