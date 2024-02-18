@@ -635,5 +635,5 @@ with open("iptvlist.m3u", 'w', encoding='utf-8') as file:
     # 写入自定义频道文件合并后的文件
     with open("iptv_list.txt", "w", encoding="utf-8") as output:
         output.write('\n'.join(file_contents))
-
+    file.write(f"#EXTINF:-1 group-title=\"{now_today}更新\"\n")
 print("任务运行完毕，分类频道列表可查看文件夹内iptv_list.txt和iptv_list.m3u文件！")
