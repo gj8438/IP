@@ -1055,8 +1055,6 @@ IPTV魅力时尚,http://60.213.92.38:9901/tsfile/live/1046_1.m3u8?key=txiptv&pla
 风云足球,http://59.62.8.250:9901/tsfile/live/0108_1.m3u8?key=txiptv&playlive=1&authid=0
 风云足球,http://58.19.252.68:9901/tsfile/live/1034_1.m3u8?key=txiptv&playlive=1&authid=0
 风云音乐,http://113.195.13.183:9901/tsfile/live/1052_1.m3u8?key=txiptv&playlive=0&authid=0
-2024-02-19更新,#genre#
-
 
 移动专网,#genre#
 求索动物8M,http://39.134.66.66/PLTV/88888888/224/3221225730/index.m3u8
