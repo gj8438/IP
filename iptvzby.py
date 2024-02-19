@@ -373,7 +373,7 @@ now_today = datetime.date.today()
 
 result_counter = 10  # 每个频道需要的个数
 
-with open("iptvlist.txt", 'w', encoding='utf-8') as file:
+with open("iptv_list.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('央视频道,#genre#\n')
     for result in results:
@@ -497,7 +497,7 @@ with open("iptvlist.txt", 'w', encoding='utf-8') as file:
     file.write(f"{now_today}更新,#genre#\n")
                 
 
-with open("iptvlist.m3u", 'w', encoding='utf-8') as file:
+with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('#EXTM3U\n')
     for result in results:
@@ -622,14 +622,14 @@ with open("iptvlist.m3u", 'w', encoding='utf-8') as file:
 
     # 合并自定义频道文件内容
     file_contents = []
-    file_paths = ["iptvlist.txt", "zdy.txt"]  # 替换为实际的文件路径列表
+    file_paths = ["iptv_list.txt", "zdy.txt"]  # 替换为实际的文件路径列表
     for file_path in file_paths:
         with open(file_path, 'r', encoding="utf-8") as file:
             content = file.read()
             file_contents.append(content)
 
     # 写入自定义频道文件合并后的文件
-    with open("iptvlist.txt", "w", encoding="utf-8") as output:
+    with open("iptv_list.txt", "w", encoding="utf-8") as output:
         output.write('\n'.join(file_contents))
 
-print("任务运行完毕，分类频道列表可查看文件夹内iptvlist.txt和iptvlist.m3u文件！")
+print("任务运行完毕，分类频道列表可查看文件夹内iptv_list.txt和iptv_list.m3u文件！")
