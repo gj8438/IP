@@ -493,8 +493,6 @@ with open("iptv_list.txt", 'w', encoding='utf-8') as file:
             else:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
-
-    file.write(f"{now_today}更新,#genre#\n")
                 
 
 with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
