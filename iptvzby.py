@@ -223,12 +223,13 @@ for url in urls:
                             name = name.replace("东方卫视", "上海卫视")
                             name = name.replace("内蒙卫视", "内蒙古卫视")
                             name = name.replace("福建东南卫视", "东南卫视")
+                            name = name.replace("广东南方卫视", "南方卫视")
                             name = name.replace("金鹰卡通卫视", "金鹰卡通")
                             name = name.replace("湖南金鹰卡通", "金鹰卡通")
                             name = name.replace("炫动卡通", "哈哈炫动")
                             name = name.replace("卡酷卡通", "卡酷少儿")
                             name = name.replace("卡酷动画", "卡酷少儿")
-                            name = name.replace("BTV卡酷", "卡酷少儿")
+                            name = name.replace("BRTVKAKU少儿", "卡酷少儿")
                             name = name.replace("优曼卡通", "优漫卡通")
                             name = name.replace("优曼卡通", "优漫卡通")
                             name = name.replace("嘉佳卡通", "佳嘉卡通")
@@ -241,8 +242,6 @@ for url in urls:
                             name = name.replace("湖南电视台", "湖南卫视")
                             name = name.replace("少儿科教", "少儿")
                             name = name.replace("影视剧", "影视")
-                            name = name.replace("2套", "二套")
-                            name = name.replace("1套", "一套")
                             results.append(f"{name},{urld}")
             except:
                 continue
