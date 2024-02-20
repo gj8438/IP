@@ -2298,7 +2298,27 @@ MTV音乐,http://pluto-live.plutotv.net/egress/chandler/pluto01/live/VIACBS02/ma
 音乐汇003,https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/5f56c2ef0d1b4b90aa1b32b961771ece/1200.m3u8
 音乐汇002,https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/59a2a9c1ec24426480c107383e25480d/1200.m3u8
 音乐汇001,https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/b2cf010635784dd1ba64d59031b7c350/1200.m3u8
- 
+
+省级春晚,#genre#  
+文艺春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_4782727155_8975589786/merged_1707541629709_46580_197437_205014.m3u8 
+文艺中国春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_3904400863_8972033221/merged_1707576366100_782935_20_9474.m3u8 
+北京春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2628045633_8974493570/merged_1707580451695_282946_304166_319947.m3u8 
+上海春晚,https://live.video.weibocdn.com/a19f890e-7830-48eb-bebd-8aab010b2575_index.m3u8 
+广东春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_3484323866_8960570457/merged_1707585485991_675401_20_31291.m3u8 
+深圳春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_1059149906_8981287739/merged_1707402248322_281099_120_8241.m3u8 
+天津春晚,https://apd-ugcvlive.apdcdn.tc.qq.com/defaultts.tc.qq.com/AQVH_VFhUdHQscWLqgqLlzfyfItuWb8P8n5HR1GZFaIE/B_JxNyiJmktHRgresXhfyMehMsdFiFEG8eJJo8Zi94NZrUMsVGsrzn1zIPRUcJj0J0/svp_50135/pF3xNmJlOFo-agRg8_lH-aP2hXofEfdjsnhJDCAKNBxfYDrY2rd8Tb9qa1rnqaxA1IefRD2GZxaDMmYL-SaPRBVwmZ0EWKuhGAAwX9vmKO0136VY0E26zw8XGSQmkyez-eMb8X0mEi8GDZAepU6TCCA2rwKfKZ4QJcBM_ZZkFCcirW9XdWE_Zh-GrCL5LJ9qnJhRFCgEgBPxm-1O8ojfbtvvJ3bJIRKN/gzc_1000131_0b53zmbagaacomaixyofmrs5ls6dapiqea2a.f341003.ts.m3u8?ver=4 
+江苏春晚,https://cw2024-replay.jstv.com/recordings/z1.cw2024.PGM_6000K_1080P/1707564807_1707576420.m3u8 
+陕西春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_273017592_8984207694/merged_1707576906552_928771_21_23920.m3u8 
+河南杂技春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2908997590_8981514174/merged_1707576666262_310189_20_12052.m3u8 
+辽宁春晚,https://valipl.cp31.ott.cibntv.net/677404224594A72106F3A3919/030006000065C7245277ABBBAC93E94E968F56-7DF1-4DF2-AB07-C25E88B9CED1-12-679380930.m3u8?ccode=0502&duration=7588&expire=18000&psid=d265f34985cc6468a2cb615edff634f841346&ups_client_netip=710dfae4&ups_ts=1707853945&ups_userid=&utid=4cIIHp7jyxsCAatrwyEAepkH&vid=XNjM1NDgxNjYxMg%3D%3D&vkey=B299d481c120c0974a597cd5b161a3107&s=dbdba2830ab744a891fe&eo=0&t=5890f5952a5957d&cug=1&fms=ef9d0c8d858834c3&tr=7588&le=e98889fc22256cfd7535a04de3d7ff4a&ckt=5&m_onoff=0&rid=20000000C5536B65766DADB6F84179C461862B9102000000&type=mp4hdv3&bc=2&dre=u37&si=73&dst=1&sm=1&operate_type=1&hotvt=1&app_key=24679788&app_ver=9.4.60
+云南春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_3513586197_8986541184/merged_1707572046053_317902_20_5661.m3u8 
+吉林春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2793773787_8970189176/merged_1707057065894_309759_100_6556.m3u8
+ 海南春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2267656144_8976051108/merged_1707580688187_658915_81072_94311.m3u8
+山东春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_3133221326_8975159134/merged_1707321427885_3579_102083_117223.m3u8
+湖北春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2435481218_8982680172/merged_1707577506416_278154_20_12521.m3u8 
+甘肃春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_2739046280_8980517688/merged_1707401406221_69555_11978_20987.m3u8 
+福建春晚,https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_773933947_8977490177/merged_1707395346161_74642_1380_4848.
+
   
 历年春晚,#genre#
 春晚1983,https://alimov2.a.kwimgs.com/upic/2022/01/31/15/BMjAyMjAxMzExNTU5MTRfNDAzMDAxOTlfNjYyNzMxNjcwMjBfMF8z_b_Beb3bda599f76c60c463c433ca7460153.mp4
