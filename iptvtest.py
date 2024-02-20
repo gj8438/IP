@@ -6,7 +6,6 @@ import threading
 from queue import Queue
 import requests
 import eventlet
-
 eventlet.monkey_patch()
 
 # 线程安全的队列，用于存储下载任务
@@ -14,7 +13,6 @@ task_queue = Queue()
 
 # 线程安全的列表，用于存储结果
 results = []
-
 channels = []
 error_channels = []
 
