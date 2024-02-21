@@ -748,5 +748,9 @@ with open("iptv_list.m3u", 'w', encoding='utf-8') as file:
     # 写入合并后的文件
     with open("iptv_list.m3u", "w", encoding="utf-8") as output:
         output.write('\n'.join(file_contents))
-
+        
+    os.remove("iptv.txt")
+    os.remove("cctv.txt")
+    os.remove("cctv.m3u")
+    
 print("任务运行完毕，分类频道列表可查看文件夹内iptv_list.txt和iptv_list.m3u文件！")
