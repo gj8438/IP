@@ -45,8 +45,8 @@ jobs:
 
       - name: 提交更改
         run: |
-          git config --local user.email "369825970@qq.com"
-          git config --local user.name "mlyuanlang"
+          git config --local user.email "gj8438@163.com"
+          git config --local user.name "gj8438"
           git add .
           git commit *.txt -m "Add generated file"
           git commit *.m3u -m "Add generated file"
