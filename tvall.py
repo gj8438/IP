@@ -543,12 +543,12 @@ for url in urls:
 
 results = set(results)  # 去重得到唯一的URL列表
 results = sorted(results)
-with open("iptv1.txt", 'w', encoding='utf-8') as file:
+with open("iptv2.txt", 'w', encoding='utf-8') as file:
     for result in results:
         file.write(result + "\n")
         print(result)
 
-print("频道列表文件iptv1.txt获取完成！")
+print("频道列表文件iptv2.txt获取完成！")
 
 
 import os
@@ -571,7 +571,7 @@ results = []
 channels = []
 error_channels = []
 
-with open("iptv1.txt", 'r', encoding='utf-8') as file:
+with open("iptv2.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
@@ -659,7 +659,7 @@ now_today = datetime.date.today()
 
 result_counter = 10  # 每个频道需要的个数
 
-with open("cctv1.txt", 'w', encoding='utf-8') as file:
+with open("cctv2.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('央视频道,#genre#\n')
     for result in results:
@@ -675,7 +675,7 @@ with open("cctv1.txt", 'w', encoding='utf-8') as file:
                 file.write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
 
-with open("cctv1.m3u", 'w', encoding='utf-8') as file:
+with open("cctv2.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('#EXTM3U\n')
     for result in results:
@@ -702,7 +702,7 @@ results = []
 channels = []
 error_channels = []
 
-with open("iptv1.txt", 'r', encoding='utf-8') as file:
+with open("iptv2.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
     for line in lines:
         line = line.strip()
@@ -790,7 +790,7 @@ now_today = datetime.date.today()
 
 result_counter = 10  # 每个频道需要的个数
 
-with open("iptv1_list.txt", 'w', encoding='utf-8') as file:
+with open("iptv2_list.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
     file.write('卫视频道,#genre#\n')
     for result in results:
@@ -898,7 +898,7 @@ with open("iptv1_list.txt", 'w', encoding='utf-8') as file:
 
     # file.write(f"{now_today}更新,#genre#\n")
 
-with open("iptv1_list.m3u", 'w', encoding='utf-8') as file:
+with open("iptv2_list.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
     # file.write('卫视频道,#genre#\n')
     for result in results:
@@ -1020,30 +1020,30 @@ with open("iptv1_list.m3u", 'w', encoding='utf-8') as file:
 
     # 合并自定义频道文件内容
     file_contents = []
-    file_paths = ["cctv1.txt", "iptv1_list.txt", "zdy.txt"]  # 替换为实际的文件路径列表
+    file_paths = ["cctv2.txt", "iptv2_list.txt", "zdy.txt"]  # 替换为实际的文件路径列表
     for file_path in file_paths:
         with open(file_path, 'r', encoding="utf-8") as file:
             content = file.read()
             file_contents.append(content)
 
     # 写入合并后的文件
-    with open("iptv1_list.txt", "w", encoding="utf-8") as output:
+    with open("iptv2_list.txt", "w", encoding="utf-8") as output:
         output.write('\n'.join(file_contents))
 
     # 合并自定义频道文件内容
     file_contents = []
-    file_paths = ["cctv1.m3u", "iptv1_list.m3u"]  # 替换为实际的文件路径列表
+    file_paths = ["cctv2.m3u", "iptv2_list.m3u"]  # 替换为实际的文件路径列表
     for file_path in file_paths:
         with open(file_path, 'r', encoding="utf-8") as file:
             content = file.read()
             file_contents.append(content)
 
     # 写入合并后的文件
-    with open("iptv1_list.m3u", "w", encoding="utf-8") as output:
+    with open("iptv2_list.m3u", "w", encoding="utf-8") as output:
         output.write('\n'.join(file_contents))
         
-    os.remove("iptv1.txt")
-    os.remove("cctv1.txt")
-    os.remove("cctv1.m3u")
+    os.remove("iptv2.txt")
+    os.remove("cctv2.txt")
+    os.remove("cctv2.m3u")
     
-print("任务运行完毕，分类频道列表可查看文件夹内iptv1_list.txt和iptv1_list.m3u文件！")
+print("任务运行完毕，分类频道列表可查看文件夹内iptv2_list.txt和iptv2_list.m3u文件！")
