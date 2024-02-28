@@ -1,11 +1,11 @@
-name: IPTV1
+name: test
 
 on:
   schedule:
     - cron: '0 5,7,21, * * *'
   push:
     branches:
-      - main1
+      - test
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,14 +32,14 @@ jobs:
         run: |
           sudo ln -sf /usr/local/bin/chrome-headless-shell-linux64/chrome-headless-shell /usr/local/bin/chromedriver
           sudo chmod +x /usr/local/bin/chromedriver
-      - name: Run iptv1
+      - name: Run test
         run: python ${{ github.workspace }}/test2.py
         
          
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
-          name: iptv1
+          name: test
           path: ${{ github.workspace }}/
 
       - name: 提交更改
