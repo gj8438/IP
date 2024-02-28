@@ -2,7 +2,7 @@ name: test
 
 on:
   schedule:
-    - cron: '0 4,21, * * *'
+    - cron: '0 4,20, * * *'
   push:
     branches:
       - test
