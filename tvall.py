@@ -393,7 +393,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 20
+num_threads = 10
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True)
     # t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
@@ -524,7 +524,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 20
+num_threads = 10
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True)
     # t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
@@ -784,7 +784,7 @@ with open("iptv2_list.m3u", 'w', encoding='utf-8') as file:
 
     # 合并自定义频道文件内容
     file_contents = []
-    file_paths = ["cctv2.txt", "iptv2_list.txt", "zdy.txt"]  # 替换为实际的文件路径列表
+    file_paths = ["cctv2.txt", "iptv2_list.txt"]  # 替换为实际的文件路径列表
     for file_path in file_paths:
         with open(file_path, 'r', encoding="utf-8") as file:
             content = file.read()
